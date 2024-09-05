@@ -1,7 +1,10 @@
-export default function Home() {
+import { Sidebar } from "./components/navigation/ui/Sidebar";
+const Home = () => {
   return (
     <div>
-      Hola
+      <Sidebar />
     </div>
   );
-}
+};
+
+export default Home;

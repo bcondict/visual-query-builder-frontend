@@ -2,8 +2,11 @@
 import styles from "./Sidebar.module.css";
 import { useState } from "react";
 
-// import { FaArrowLeft } from "react-icons/fa";
+import Image from "next/image";
+
 import { IoIosArrowBack } from "react-icons/io";
+
+// import { sidebarItems } from "../module/sidebarItems";
 
 export const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -23,7 +26,20 @@ export const Sidebar = () => {
         />
       </button>
 
-      <aside></aside>
+      {/* Sidebar */}
+      <aside className={styles.sidebar} data-collapse={isCollapsed}>
+        {/* logo */}
+        <div className={styles.sidebarTop}>
+          <Image
+            src={isCollapsed ? "/LogoSmall.png" : "/Logo.png"}
+            height={100}
+            width={137}
+            alt="Logo"
+            className={styles.sidebarLogo}
+          />
+        </div>
+        {/* elements */}
+      </aside>
     </section>
   );
   // return (
